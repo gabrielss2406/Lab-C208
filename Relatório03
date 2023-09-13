@@ -1,0 +1,33 @@
+.text
+# a) 2 + 5
+li $t0,2
+addi $s0,$t0,5
+# b) 89 + 20
+li $t1,89
+addi $s1,$t1,20
+# c) -80 + 1234
+li $t2,-80
+addi $s2,$t2,1234
+# d) 70 - 24
+li $t3,70
+sub $s3,$t3,24
+# e) 20 - 150
+li $t4,20
+sub $s4,$t4,150
+
+# Peça para entrar com idade e mostre a idade daqui a 30 anos
+li $v0, 5 # configura leitura int
+syscall # le int
+move $t5, $v0 # salvando em $t5
+addi $t5, $t5, 30 # calculando
+move $a0, $t5 # inteiro a ser exibido
+li $v0, 1 # setando para exibir inteiro
+syscall # faz saida
+
+# Converta código em C para asm MIPS
+li $t0, 54
+li $t1, 45
+add $t2, $t0, $t1
+li $v0, 1
+move $a0, $t2
+syscall
