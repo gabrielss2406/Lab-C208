@@ -25,9 +25,9 @@ li $v0, 1 # setando para exibir inteiro
 syscall # faz saida
 
 # Converta código em C para asm MIPS
-li $t0, 54
-li $t1, 45
-add $t2, $t0, $t1
+li $t0, 54 # char a = 54;
+li $t1, 45 # char b = 45;
+add $t2, $t0, $t1 # a + b
 li $v0, 1
 move $a0, $t2
-syscall
+syscall # printf("%d", a + b);
